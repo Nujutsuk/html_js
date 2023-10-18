@@ -1,22 +1,15 @@
 function validarFormulario() {
-    var campo_a = document.getElementById('campo-a').value;
-    var campo_b = document.getElementById('campo-b').value;
-
-    if (campo_b > campo_a) {
-        alert('A validação foi um sucesso!');
-        return true;
-        limparCampos();
+    const campo_a = parseInt(document.getElementById('campo-a').value);
+    const campo_b = parseInt(document.getElementById('campo-b').value);
+    
+    if (campo_a >= campo_b) {
+        alert('Não foi possível realizar a validação, por favor revise seus dados!');
+        return false;       
     }
 
-    else if(campo_a == campo_b){
-        alert('Os valores são igual, tente novamente!');
-        return false;
-        limparCampos();
-    } 
-
     else {
-        alert('Não foi possível realizar a validação, por favor revise seus dados!');
-        return false;
+        alert('A validação foi um sucesso!');
+        return true;
         limparCampos();
     }
 
